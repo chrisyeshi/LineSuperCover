@@ -1,13 +1,13 @@
 #include "linesupercover.h"
 #include <cmath>
 
-std::ostream& operator<<(std::ostream& out, const Index2& index2)
+std::ostream& operator<<(std::ostream& out, const LineSuperCover::Index2& index2)
 {
 	out << "[" << index2.x << "," << index2.y << "]";
 	return out;
 }
 
-bool operator==(const Index2& a, const Index2& b)
+bool operator==(const LineSuperCover::Index2& a, const LineSuperCover::Index2& b)
 {
 	if (a.x == b.x && a.y == b.y)
 		return true;
@@ -20,7 +20,7 @@ LineSuperCover::LineSuperCover(int w, int h)
 
 }
 
-std::vector<Index2> LineSuperCover::traverse(float begX, float begY, float dirX, float dirY)
+std::vector<LineSuperCover::Index2> LineSuperCover::traverse(float begX, float begY, float dirX, float dirY)
 {
 	// traverse along the direction vector
 	if (fabs(dirX) >= fabs(dirY))
@@ -29,7 +29,7 @@ std::vector<Index2> LineSuperCover::traverse(float begX, float begY, float dirX,
 		return traverseRise(begX, begY, dirX, dirY);
 }
 
-std::vector<Index2> LineSuperCover::traverseRun(float begX, float begY, float dirX, float dirY)
+std::vector<LineSuperCover::Index2> LineSuperCover::traverseRun(float begX, float begY, float dirX, float dirY)
 {
 	std::vector<Index2> out;
 	// real beginning cell
@@ -115,7 +115,7 @@ std::vector<Index2> LineSuperCover::traverseRun(float begX, float begY, float di
 	return out;
 }
 
-std::vector<Index2> LineSuperCover::traverseRise(float begX, float begY, float dirX, float dirY)
+std::vector<LineSuperCover::Index2> LineSuperCover::traverseRise(float begX, float begY, float dirX, float dirY)
 {
 	std::vector<Index2> out;
 	// real beginning cell

@@ -4,7 +4,7 @@
 #include <cassert>
 #include "linesupercover.h"
 
-void printAndCompare(const std::string& header, const std::vector<Index2>& results, const std::vector<Index2>& correct)
+void printAndCompare(const std::string& header, const std::vector<LineSuperCover::Index2>& results, const std::vector<LineSuperCover::Index2>& correct)
 {
 	std::cout << header << std::endl;
 	std::cout << "Results: ";

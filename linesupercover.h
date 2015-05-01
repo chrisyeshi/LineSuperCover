@@ -4,22 +4,17 @@
 #include <vector>
 #include <iostream>
 
-struct Vec2
-{
-	float x, y;
-	Vec2(float x, float y) : x(x), y(y) {}
-};
-
-struct Index2
-{
-	int x, y;
-	Index2(int x, int y) : x(x), y(y) {}
-	friend std::ostream& operator<<(std::ostream& out, const Index2& index2);
-	friend bool operator==(const Index2& a, const Index2& b);
-};
-
 class LineSuperCover
 {
+public:
+	struct Index2
+	{
+		int x, y;
+		Index2(int x, int y) : x(x), y(y) {}
+		friend std::ostream& operator<<(std::ostream& out, const Index2& index2);
+		friend bool operator==(const Index2& a, const Index2& b);
+	};
+
 public:
 	LineSuperCover(int w, int h);
 	~LineSuperCover() {}
