@@ -19,3 +19,7 @@ add_test(vertical vertical)
 add_executable(rise rise.cpp)
 target_link_libraries(rise linesuper)
 add_test(rise rise)
+
+add_executable(steady steady.cpp)
+target_link_libraries(steady linesuper)
+add_test(steady steady)
